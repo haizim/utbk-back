@@ -1,0 +1,108 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "nama": "Wahidd",
+    "email": "wahidhasyim@gmail.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "wahihasyim@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/admin/soal
+
+###
+POST http://localhost:5000/admin/soal
+Content-Type: application/json
+
+{
+    "nama": "Soal 1"
+}
+
+###
+PATCH http://localhost:5000/admin/soal/1/tps
+Content-Type: application/json
+
+{
+    "nama":"Soal 1",
+    "soal":[
+        {
+            "jenis":"petunjuk",
+            "isi":"INI SOAL TPS PAKET 1 yaa"
+        },
+        {
+            "jenis":"soal",
+            "soal":"soalnya yaa",
+            "jawaban":"a",
+            "a":"a",
+            "b":"b",
+            "c":"c",
+            "d":"d",
+            "e":"e"
+        },
+        {
+            "jenis":"soal",
+            "soal":"soal kedua",
+            "jawaban":"b",
+            "a":"aa",
+            "b":"bb",
+            "c":"cc",
+            "d":"dd",
+            "e":"ee"
+        }
+    ]
+}
+
+###
+GET http://localhost:5000/admin/soal/1/tpa
+
+###
+GET http://localhost:5000/admin/token
+
+###
+POST http://localhost:5000/admin/token
+Content-Type: application/json
+
+{
+    "token": "TKN-2528",
+    "instansi": "InstansiM",
+    "soal": "1",
+    "expired": "2021-5-25" 
+}
+
+###
+GET http://localhost:5000/admin/token/UTBK-2528
+
+###
+GET http://localhost:5000/user/token/UTBK-252
+
+###
+POST http://localhost:5000/user/hasil
+Content-Type: application/json
+
+{
+    "email": "wahihasyim@gmail.com",
+    "token": "UTBK-HIDEN01" 
+}
+
+###
+PATCH http://localhost:5000/user/hasil/wahid@m.m/UTBK-SB
+Content-Type: application/json
+
+{
+    "tes":"tps",
+    "jawaban":{"1":"a","2":""},
+    "soal": "1"
+}
